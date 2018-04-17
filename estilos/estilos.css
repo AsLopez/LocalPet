@@ -1,0 +1,165 @@
+body
+{
+	background-color: #E7E5E6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /*font-family: Arial; */
+}
+
+input[type="text"], input[type="password"]
+{
+	outline: none;
+	padding: 20px;
+	display: block;
+	width: 300px;
+	border-radius: 3px;
+	border: 1px solid gray;
+	margin: 20px;
+}
+
+input[type="submit"]
+{
+	padding: 10px;
+	color: white;
+	background: #0098cb;
+	width: 320px;
+	margin: 20px auto;
+	margin-top: 0;
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover
+{
+	background-color: #00b8eb;
+}
+
+header
+{	
+	border-bottom: 3px solid gray;
+	padding: 15px 0;
+	margin-bottom: 10px;
+	width: 80%;
+	text-align: center;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+header a
+{
+	text-decoration: none;
+	background: #345395;
+	color: #333;
+	padding: 10px 20px;
+	margin: 10px;
+	color: white;
+	border-radius: 3px;
+	font-size: 1.05em;
+}
+
+header a:hover
+{
+	background-color: #00b8eb;
+}
+
+.top-menu
+{
+	border-bottom: 3px solid gray;
+	padding: 35px 0;
+	margin-bottom: 10px;
+	display: inline-flex;
+	width: 80%;
+	
+}
+
+.top-menu a
+{
+	text-decoration: none;
+	background: #213766;
+	color: #333;
+	padding: 5px 25px;
+	margin: 10px;
+	color: white;
+	border-radius: 3px;
+}
+
+.top-menu-left
+{
+	position: relative;
+	display: inline-block;
+	text-align: left;
+	width: 80%;
+}
+
+.top-menu-rigth
+{
+	position: relative;
+	display: inline-block;
+	text-align: right;
+	width: 80%;
+}
+
+.top-menu a:hover
+{
+	background-color: #00b8eb;
+}
+
+textarea
+{
+	min-height: 50px;
+	max-height: 300px;
+	min-width: 300px;
+	max-width: 300px;
+	outline: none;
+	padding: 20px;
+	display: block;
+	border-radius: 3px;
+	border: 1px solid gray;
+	margin: 20px;
+}
+
+.datos-publicacion input[type="text"]
+{
+	outline: none;
+	padding: 10px;
+	display: block;
+	width: 500px;
+	border-radius: 3px;
+	border: 1px solid gray;
+	margin: 15px;
+}
+
+.publicaciones
+{
+	background-color: #D9E4F9;
+	color: black;
+	font-size: 1.2em;
+	width: 600px;
+	border-radius: 10px;
+	border: 2px solid #D9E4F9;
+	margin: 15px;
+}
+
+.publicaciones a
+{
+	text-decoration: none;
+	background: #213766;
+	color: #333;
+	padding: 0 3px;
+	margin: 3px;
+	color: white;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.publicacion
+{
+	text-align: left;
+	width: 85%;
+	border-radius: 10px;
+	border: 2px solid gray;
+	margin: 15px;
+	padding: 5px 15px;
+}
