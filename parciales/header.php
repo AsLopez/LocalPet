@@ -15,5 +15,5 @@
 	<a href="adopta.php">ADOPTA</a>
 	<a href="publica.php">PUBLICA</a>
 	<a href="#">COMPRAS PARA TU MASCOTA</a>
-	<a href="#">EXPLORADOR USUARIOS</a>
+	<a href="explorer.php">EXPLORADOR USUARIOS</a>
 </header>
