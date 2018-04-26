@@ -142,9 +142,10 @@ textarea
 	margin: 15px;
 }
 
-.publicaciones a
+.publicaciones input[type="submit"]
 {
 	text-decoration: none;
+	font-size: large; 
 	background: #213766;
 	color: #333;
 	padding: 0 3px;
@@ -152,9 +153,10 @@ textarea
 	color: white;
 	border-radius: 3px;
 	text-align: center;
+	width: auto;
 }
 
-.publicacion
+.publicacion 
 {
 	text-align: left;
 	width: 85%;
@@ -162,4 +164,42 @@ textarea
 	border: 2px solid gray;
 	margin: 15px;
 	padding: 5px 15px;
+}
+.publicacion input[type="submit"]
+{
+	text-decoration: none;
+	font-size: large; 
+	background: #213766;
+	color: #333;
+	padding: 0 3px;
+	margin: 3px;
+	color: white;
+	border-radius: 3px;
+	text-align: center;
+	width: auto;
+}
+
+.adopcion
+{
+	text-align: left;
+	width: 85%;
+	border-radius: 10px;
+	border: 2px solid gray;
+	margin: 15px;
+	padding: 5px 15px;
+}
+table {
+	background-color: teal;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
