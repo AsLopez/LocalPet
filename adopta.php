@@ -49,7 +49,7 @@
 	-->
 		<div class="publicaciones">
 			<?php
-			$consulta = $conn->prepare('SELECT titulo,raza,ciudad FROM publicaciones');
+			$consulta = $conn->prepare('SELECT id_publicacion,titulo,raza,ciudad FROM publicaciones');
 			$consulta->bindParam(':id', $_SESSION['user_id']);
 			$consulta->execute();
 			?>
@@ -65,11 +65,29 @@
 				 	<?php echo $fila['raza']; ?>
 				 	<br><b>Ciudad:</b>
 				 	<?php echo $fila['ciudad']; ?>
+				 	<br><b>Id:</b>
+				 	<?php echo $fila['id_publicacion']; ?>
 				 	<center>
-			 		<a href="#">+</a>
+				 		<input type="submit" value="+">
+			 			<!--
+			 			<a href="#">+</a>
+			 			-->
 					</center>
 				</div>
 			<?php } ?>
+			<?php if (!empty($user))
+						{
+							$sql = "INSERT INTO adopciones (usuario_id,publicacion_id) VALUES (:usuario_id,:publicacion_id)";
+							$stmt = $conn->prepare($sql);
+							$stmt->bindParam(':usuario_id', $_SESSION['user_id']);
+							$stmt->bindParam(':publicacion_id', $_SESSION['id_publicacion']);
+							if ($stmt->execute()){
+									$message = 'Añadido satisfactoriamente';
+							}else {
+								$message = 'Error adoptando mascota';
+							}
+						}
+						?>
 		</div>
 	</center>
 </body>

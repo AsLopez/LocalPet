@@ -47,7 +47,8 @@
 				 	<br><b>Ciudad:</b>
 				 	<?php echo $fila['ciudad']; ?>
 				 	<center>
-			 		<a href="#">+</a>
+			 		<input type="submit" value="Editar">
+			 		<input type="submit" value="Eliminar">
 					</center>
 				</div>
 			<?php } ?>
