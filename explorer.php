@@ -17,8 +17,6 @@
 			$user = $results;
 		}
 	}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +27,22 @@
 </head>
 <body>
 	<?php require 'parciales/header.php' ?>
+	<?php $id=$_REQUEST['id']; ?>
 
 	<center>
+		<?php
+		$sql = "INSERT INTO adopciones (usuario_id,publicacion_id) VALUES (:usuario_id,:publicacion_id)";
+		$stmt = $conn->prepare($sql);
+		$stmt->bindParam(':usuario_id', $_SESSION['user_id']);
+		$stmt->bindParam(':publicaion_id', $_REQUEST['id']);
+
+		if ($stmt->execute())
+		{
+			$message = 'Publicacion creada satisfactoriamente';
+		}else {
+			$message = 'Error creando su publicacion';
+		}
+		?>
 		<div class="publicaciones">
 			<table style="width:100%">
 				<tr>
@@ -57,7 +69,7 @@
 							$sql = "INSERT INTO adopciones (usuario_id,publicacion_id) VALUES (:usuario_id,:publicacion_id)";
 							$stmt = $conn->prepare($sql);
 							$stmt->bindParam(':usuario_id', $_SESSION['user_id']);
-							$stmt->bindParam(':publicacion_id', $_SESSION['id_publicacion']);
+							$stmt->bindParam(':publicacion_id', $id);
 							if ($stmt->execute()){
 									$message = 'Añadido satisfactoriamente';
 							}else {

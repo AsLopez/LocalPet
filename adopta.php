@@ -55,10 +55,7 @@
 			?>
 			<?php while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
 				<div class="publicacion">
-					<!--<br><b>Titulo:</b> <?= $user['titulo'] ?>
-					<br><b>Raza:</b> <?= $user['raza'] ?>
-					<br><b>Ciudad:</b> <?= $user['ciudad'] ?>
-					<br><a href="#">+</a></b>-->
+					
 					<br><b>Titulo:</b>
 				 	<?php echo $fila['titulo']; ?>
 				 	<br><b>Raza:</b>
@@ -68,26 +65,28 @@
 				 	<br><b>Id:</b>
 				 	<?php echo $fila['id_publicacion']; ?>
 				 	<center>
-				 		<input type="submit" value="+">
+				 		<input type="submit" value="+" id="btn-adoptar">
 			 			<!--
-			 			<a href="#">+</a>
+			 			//<a href="explorer.php?id=<?php echo $fila['id_publicacion']; ?>">+</a>
 			 			-->
 					</center>
 				</div>
 			<?php } ?>
-			<?php if (!empty($user))
-						{
-							$sql = "INSERT INTO adopciones (usuario_id,publicacion_id) VALUES (:usuario_id,:publicacion_id)";
-							$stmt = $conn->prepare($sql);
-							$stmt->bindParam(':usuario_id', $_SESSION['user_id']);
-							$stmt->bindParam(':publicacion_id', $_SESSION['id_publicacion']);
-							if ($stmt->execute()){
-									$message = 'Añadido satisfactoriamente';
-							}else {
-								$message = 'Error adoptando mascota';
-							}
-						}
-						?>
+			<div id="resultado">
+				<h3>Aqui </h3>
+			</div>
+			<?php if (!empty($user) ){
+				$sql = "INSERT INTO adopciones (usuario_id,publicacion_id) VALUES (:usuario_id,:publicacion_id)";
+				$stmt = $conn->prepare($sql);
+				$stmt->bindParam(':usuario_id', $_SESSION['user_id']);
+				$stmt->bindParam(':publicacion_id', $_SESSION['id_publicacion']);
+				if ($stmt->execute()){
+					$message = 'Añadido satisfactoriamente';
+				}else {
+					$message = 'Error adoptando mascota';
+				}
+			}
+			?>
 		</div>
 	</center>
 </body>
